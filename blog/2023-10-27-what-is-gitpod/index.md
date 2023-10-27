@@ -2,7 +2,7 @@
 slug: what-is-gitpod
 title: What is Gitpod?
 authors: [ elbert ]
-tags: [ gitpod ]
+tags: [ gitpod, github, gitlab, code-editor ]
 ---
 
 ![Docusaurus Plushie](./imagem-gitpod.png)
