@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy
         run: |
-          if [ -z "$TOKEN_GITHUB" ]; then
+          if [ -z ${{ secrets.TOKEN_GITHUB }} ]; then
             echo "Set the TOKEN_GITHUB secret in your repository settings"
             exit 1
           fi
