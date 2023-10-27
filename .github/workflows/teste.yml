@@ -9,11 +9,20 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      -
-        name: Gen dummy page
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Build Docusaurus website
+        run: |
+          npm install 
+          npm run build
+
+      - name: Gen dummy page
         run: |
           mkdir public
           cat > public/index.html <<EOL
