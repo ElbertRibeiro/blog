@@ -26,8 +26,8 @@ jobs:
 
       - name: Deploy
         run: |
-          if [ -z "$GITHUB_TOKEN" ]; then
-            echo "Set the GITHUB_TOKEN secret in your repository settings"
+          if [ -z "$TOKEN_GITHUB" ]; then
+            echo "Set the TOKEN_GITHUB secret in your repository settings"
             exit 1
           fi
           gh-pages -d build -b gh-pages -t true
