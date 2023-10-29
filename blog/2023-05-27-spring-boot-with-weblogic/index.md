@@ -27,7 +27,7 @@ keep this article as generic as possible so that any dev can apply what was deve
 
 About the structure of the project, I developed two modules, api and core.
 
-![spring-boot-projetc-struture](./spring-boot-projetc-struture.png)
+![spring-boot-projetc-struture](img/spring-boot-projetc-struture.png)
 
 ----
 
@@ -39,8 +39,10 @@ check before compiling, especially if your project is JSP).
 
 ````maven
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.elbertribeiro</groupId>
     <artifactId>spring-boot-weblogic</artifactId>
@@ -67,7 +69,7 @@ check before compiling, especially if your project is JSP).
 
 Now, going from bottom to top, in the spring-boot-weblogic-core module, we have the following structure:
 
-![core-module-structure](core-module-structure.png)
+![core-module-structure](img/core-module-structure.png)
 
 In spring-boot-weblogic-core’s pom.xml we will have:
 
@@ -106,7 +108,7 @@ Note that the pom.xml is simple, and the idea is that it contains the dependenci
 Inside the JAVA directory we have only one package (as the idea here is just to present a functional concept, this model
 is as simple as possible).
 
-![teste-service](teste-service.png)
+![teste-service](img/teste-service.png)
 
 In the test package we have the TesteService class, which would work as a Service layer for the api. In TesteService, we
 have the following code;
@@ -131,7 +133,7 @@ module is simple for the purpose of this article, now let’s move on to the mor
 
 Now, let’s go to the spring-boot-weblogic-api module, we have the following structure:
 
-![spring-boot-project-structure](spring-boot-project-structure.png)
+![spring-boot-project-structure](img/spring-boot-project-structure.png)
 
 The first point to note is that the api module has more files, because it will contain the class that initializes the
 project in spring-boot and will also be implemented in weblogic.
@@ -140,8 +142,10 @@ In the spring-boot-weblogic-api pom.xml we will have:
 
 ````maven
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.elbertribeiro</groupId>
@@ -205,7 +209,7 @@ modules only refer to the specified version.
 
 The most important dependency here is:
 
-![core-module-structure](core-module-structure.png)
+![core-module-structure](img/core-module-structure.png)
 
 It will be responsible for allowing us to use the project with spring-boot even adding configurations to run in
 weblogic.
@@ -213,16 +217,16 @@ weblogic.
 Also note that we have the core module of the project as a dependency, allowing access to any class, method or entity
 added in the core module:
 
-![module-core-dependency](module-core-dependency.png)
+![module-core-dependency](img/module-core-dependency.png)
 
 We also have devtoos as a dependency, for those who don’t know it’s a lib that allows a browser update when a resource
 is changed at compile time, removing the need to restart your spring-boot service.
 
-![devtools-dependency](devtools-dependency.png)
+![devtools-dependency](img/devtools-dependency.png)
 
 If you looked at the spring-boot-weblogic-api pom.xml you might have noticed two plugins:
 
-![plugin.png](plugin.png)
+![plugin.png](img/plugin.png)
 
 The first allows you to run spring-boot commands like mvn spring-boot:run, while the second plugin is responsible for
 collecting and compiling all dependencies, classes and resources of the web application into a web application file,
@@ -239,7 +243,7 @@ promise of not explaining how libs and configurations work (we can write an arti
 About the resources directory, we only have an empty *.yml properties file. Already in the webapp directory, we have the
 files that allow you to add your application to weblogic, for the structure of the packages we have:
 
-![weblogic.png](weblogic.png)
+![weblogic.png](img/weblogic.png)
 
 In the weblogic.xml file we have;
 
@@ -275,7 +279,7 @@ In the webapp directory we also have the file dispatcherServlet-servlet.xml;
 
 And finally, we have the file structure of the JAVA directory:
 
-![dispatcherServlet-servlet.png](dispatcherServlet-servlet.png)
+![dispatcherServlet-servlet.png](img/dispatcherServlet-servlet.png)
 
 Where the ServletInitializer class has only one method:
 
@@ -358,13 +362,13 @@ To run this project with spring-boot run the command below in the spring-boot-we
 mvn spring-boot:run
 ````
 
-![test-spring-boot.png](test-spring-boot.png)
+![test-spring-boot.png](img/test-spring-boot.png)
 
 ### Running the application with Weblogic
 
 Upload the artifact to weblogic and access the weblogic address with the path of your application.
 
-![test-weblogic.png](test-weblogic.png)
+![test-weblogic.png](img/test-weblogic.png)
 
 ### Conclusion
 
