@@ -6,7 +6,7 @@ authors: [ elbert ]
 tags: [ spring-boot, java, ddd ]
 ---
 
-# Why Domain-Driven Design Outperforms Layered Architecture in Spring Boot Projects
+## Why Domain-Driven Design Outperforms Layered Architecture in Spring Boot Projects
 
 When developing a Spring Boot application, one of the most critical decisions to make is regarding the project's structure. Traditionally, many projects are organized into layers, such as DTO, Entity, and Service, to facilitate the separation of responsibilities. However, an alternative approach, based on domain-driven design (DDD), has gained prominence in recent years. In this article, we will explore the reasons why domain-based separation (e.g., Person, Car, Payment) is often a superior choice compared to layered separation.
 
