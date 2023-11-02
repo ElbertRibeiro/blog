@@ -1,5 +1,6 @@
 
 ---
+slug: padrao-projeto
 title: Spring Boot DDD
 authors: [ elbert ]
 tags: [ spring-boot, java, ddd ]
