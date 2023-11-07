@@ -5,107 +5,107 @@ authors: [ elbert ]
 tags: [ spring-boot, java, ddd ]
 ---
 
-# Utilizando Design Patterns Factory com Spring Boot
+# Using Factory Design Pattern with Spring Boot
 
-Design Patterns (Padrões de Projeto) são soluções para problemas comuns de desenvolvimento de software. Eles oferecem diretrizes comprovadas para projetar código de maneira eficiente e reutilizável. Entre esses padrões, o padrão Factory é amplamente utilizado para criar objetos de maneira flexível e desacoplada. Neste artigo, exploraremos como aplicar o Design Pattern Factory em um projeto Spring Boot, fornecendo um exemplo prático para ilustrar seu uso.
+Design Patterns are solutions to common software development problems. They offer proven guidelines for designing code efficiently and in a reusable manner. Among these patterns, the Factory Pattern is widely used for creating objects in a flexible and decoupled way. In this article, we will explore how to apply the Factory Design Pattern in a Spring Boot project, providing a practical example to illustrate its usage.
 
-## O Padrão Factory
+## The Factory Pattern
 
-O padrão Factory é um padrão de criação, que se concentra na criação de objetos. Ele fornece uma interface para criar objetos, permitindo que as subclasses decidam qual classe concreta instanciar. Isso promove o princípio da abstração e do desacoplamento.
+The Factory Pattern is a creational design pattern that focuses on object creation. It provides an interface for creating objects, allowing subclasses to decide which concrete class to instantiate. This promotes the principles of abstraction and decoupling.
 
-Existem duas variantes principais do padrão Factory: Factory Method e Abstract Factory. No entanto, aqui nos concentraremos no Factory Method, pois é o mais comumente usado e mais fácil de entender.
+There are two main variants of the Factory Pattern: the Factory Method and the Abstract Factory. However, we will focus on the Factory Method here, as it is the most commonly used and easiest to understand.
 
-## Implementando o Factory Method com Spring Boot
+## Implementing the Factory Method with Spring Boot
 
-Vamos considerar um cenário onde temos um sistema de gerenciamento de pedidos em um aplicativo Spring Boot. Existem diferentes tipos de pedidos, como pedidos de produtos físicos, pedidos de serviços e pedidos de assinatura. Cada tipo de pedido requer uma lógica de criação diferente.
+Let's consider a scenario where we have an order management system in a Spring Boot application. There are different types of orders, such as physical product orders, service orders, and subscription orders. Each type of order requires different creation logic.
 
-Para aplicar o Factory Method, começaremos criando uma interface `Pedido` que definirá as operações comuns a todos os tipos de pedido:
+To apply the Factory Method, we will start by creating an `Order` interface that defines the common operations for all types of orders:
 
 ```java
-public interface Pedido {
-    void processar();
+public interface Order {
+    void process();
 }
 ```
 
-Agora, criaremos implementações concretas dessa interface para cada tipo de pedido:
+Now, we will create concrete implementations of this interface for each type of order:
 
 ```java
-public class PedidoProdutoFisico implements Pedido {
+public class PhysicalProductOrder implements Order {
     @Override
-    public void processar() {
-        // Lógica para processar um pedido de produto físico
+    public void process() {
+        // Logic to process a physical product order
     }
 }
 
-public class PedidoServico implements Pedido {
+public class ServiceOrder implements Order {
     @Override
-    public void processar() {
-        // Lógica para processar um pedido de serviço
+    public void process() {
+        // Logic to process a service order
     }
 }
 
-public class PedidoAssinatura implements Pedido {
+public class SubscriptionOrder implements Order {
     @Override
-    public void processar() {
-        // Lógica para processar um pedido de assinatura
+    public void process() {
+        // Logic to process a subscription order
     }
 }
 ```
 
-Agora, criaremos a fábrica de pedidos (Factory) que permitirá a criação de instâncias concretas de pedidos:
+Next, we will create the order factory that allows us to create concrete order instances:
 
 ```java
-public class FabricaPedido {
-    public Pedido criarPedido(TipoPedido tipo) {
-        switch (tipo) {
-            case PRODUTO_FISICO:
-                return new PedidoProdutoFisico();
-            case SERVICO:
-                return new PedidoServico();
-            case ASSINATURA:
-                return new PedidoAssinatura();
+public class OrderFactory {
+    public Order createOrder(OrderType type) {
+        switch (type) {
+            case PHYSICAL_PRODUCT:
+                return new PhysicalProductOrder();
+            case SERVICE:
+                return new ServiceOrder();
+            case SUBSCRIPTION:
+                return new SubscriptionOrder();
             default:
-                throw new IllegalArgumentException("Tipo de pedido desconhecido");
+                throw new IllegalArgumentException("Unknown order type");
         }
     }
 }
 ```
 
-A enumeração `TipoPedido` é usada para identificar o tipo de pedido que desejamos criar.
+The `OrderType` enumeration is used to identify the type of order we want to create.
 
-Agora, podemos usar a fábrica para criar pedidos em nosso aplicativo Spring Boot:
+Now, we can use the factory to create orders in our Spring Boot application:
 
 ```java
-public class PedidoService {
-    private FabricaPedido fabricaPedido;
+public class OrderService {
+    private OrderFactory orderFactory;
 
-    public PedidoService(FabricaPedido fabricaPedido) {
-        this.fabricaPedido = fabricaPedido;
+    public OrderService(OrderFactory orderFactory) {
+        this.orderFactory = orderFactory;
     }
 
-    public void processarPedido(TipoPedido tipo) {
-        Pedido pedido = fabricaPedido.criarPedido(tipo);
-        pedido.processar();
+    public void processOrder(OrderType type) {
+        Order order = orderFactory.createOrder(type);
+        order.process();
     }
 }
 ```
 
-A classe `PedidoService` injeta a fábrica de pedidos e usa o Factory Method para criar e processar pedidos com base no tipo especificado.
+The `OrderService` class injects the order factory and uses the Factory Method to create and process orders based on the specified type.
 
-Por fim, podemos configurar o Spring Boot para injetar a fábrica de pedidos em nossa aplicação:
+Finally, we can configure Spring Boot to inject the order factory into our application:
 
 ```java
 @Configuration
 public class AppConfig {
     @Bean
-    public FabricaPedido fabricaPedido() {
-        return new FabricaPedido();
+    public OrderFactory orderFactory() {
+        return new OrderFactory();
     }
 }
 ```
 
-Agora, sempre que precisarmos criar um novo tipo de pedido, podemos simplesmente adicionar uma nova implementação da interface `Pedido` e atualizar a fábrica de pedidos para acomodar o novo tipo, mantendo nosso código flexível e extensível.
+Now, whenever we need to create a new type of order, we can simply add a new implementation of the `Order` interface and update the order factory to accommodate the new type, keeping our code flexible and extensible.
 
-## Conclusão
+## Conclusion
 
-O Design Pattern Factory é uma ferramenta valiosa para criar objetos de maneira flexível e desacoplada em um projeto Spring Boot. Ele promove o princípio da abstração e torna o código mais reutilizável e extensível. Ao seguir os princípios do Factory Method, podemos criar um sistema de gerenciamento de pedidos que pode facilmente acomodar novos tipos de pedidos sem modificar o código existente. Este é apenas um exemplo de como o Design Pattern Factory pode ser aplicado no desenvolvimento de software, e suas aplicações são amplas e variadas.
+The Factory Design Pattern is a valuable tool for creating objects in a flexible and decoupled manner in a Spring Boot project. It promotes the principles of abstraction and makes code more reusable and extensible. By following the principles of the Factory Method, we can create an order management system that can easily accommodate new types of orders without modifying existing code. This is just one example of how the Factory Design Pattern can be applied in software development, and its applications are broad and varied.
