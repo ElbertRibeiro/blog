@@ -1,3 +1,10 @@
+---
+slug: padrao-projeto-factory
+title: Spring Boot DDD Factory
+authors: [ elbert ]
+tags: [ spring-boot, java, ddd ]
+---
+
 # Utilizando Design Patterns Factory com Spring Boot
 
 Design Patterns (Padrões de Projeto) são soluções para problemas comuns de desenvolvimento de software. Eles oferecem diretrizes comprovadas para projetar código de maneira eficiente e reutilizável. Entre esses padrões, o padrão Factory é amplamente utilizado para criar objetos de maneira flexível e desacoplada. Neste artigo, exploraremos como aplicar o Design Pattern Factory em um projeto Spring Boot, fornecendo um exemplo prático para ilustrar seu uso.
