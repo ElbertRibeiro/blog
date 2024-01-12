@@ -1,8 +1,8 @@
 ---
-slug: padrao-projeto
+slug: design-pattern
 title: Spring Boot DDD
 authors: [ elbert ]
-tags: [ spring-boot, java, ddd ]
+tags: [ spring-boot, java, ddd, design-pattern ]
 ---
 
 # Why Domain-Driven Design Outperforms Layered Architecture in Spring Boot Projects

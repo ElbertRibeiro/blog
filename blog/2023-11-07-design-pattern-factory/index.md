@@ -1,8 +1,8 @@
 ---
-slug: padrao-projeto-factory
+slug: design-pattern-factory
 title: Spring Boot DDD Factory
 authors: [ elbert ]
-tags: [ spring-boot, java, ddd ]
+tags: [ spring-boot, java, ddd, design-pattern ]
 ---
 
 # Using Factory Design Pattern with Spring Boot
