@@ -5,44 +5,41 @@ authors: [ elbert ]
 tags: [ github, gitlab, code-editor, ssh ]
 ---
 
-## Verificar Chaves Geradas
+## Checking Generated Keys
 
-Para listar as existentes, executar o comando: `ls -al ~/.ssh`
+To list the existing keys, execute the command: `ls -al ~/.ssh`
 
-## Gerar Chave SSH
+## Generating SSH Key
 
-Abra o **git bash** ou seu terminal linux e execute o seguinte comando:
+Open the **git bash** or your Linux terminal and run the following command:
 
 ```shell
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-> OBS¹: no local onde está "your_email@example.com" informe seu email
+> Note¹: Replace "your_email@example.com" with your actual email.
 
-## Copiar a chave Gerada
+## Copying the Generated Key
 
-Para copiar a chave gerada para area de transferencia, use o comando:
+To copy the generated key to the clipboard, use the command:
 
 ```shell
 cat ~/.ssh/id_ed25519.pub. 
 ```
 
-## Adicionar chave no Github
+## Adding Key to Github
 
-Abra o Github e vá no ícone de perfil > Settings, no canto superior direito.
-Na barra lateral de configurações do usuário, clique em "SSH and GPG keys".
-Clique no botão "New SSH key"
-No campo "Título", adicione um rótulo descritivo para a nova chave. Por exemplo, se estiver usando seu computador
-pessoal, você pode chamar essa chave de "Computador pessoal".
-Cole a chave pública que está na área de transferência no campo "Chave".
-Clique em "Add SSH key" e pronto!
+Open Github and go to the profile icon > Settings in the top right corner. In the user settings sidebar, click on "SSH
+and GPG keys." Click on the "New SSH key" button. In the "Title" field, add a descriptive label for the new key. For
+example, if you are using your personal computer, you can name this key "Personal Computer." Paste the public key from
+the clipboard into the "Key" field. Click on "Add SSH key," and you're done!
 
-## Testar Conexão
+## Testing Connection
 
-Execute o comando a seguir no terminal:
+Execute the following command in the terminal:
 
 ```shell
 ssh -T git@github.com
 ```
 
-> OBS²: Após executar o comando anterior, digite "yes" no terminal interativo do git bash
+> Note²: After executing the previous command, type "yes" in the interactive git bash terminal.
