@@ -57,16 +57,12 @@ Next, we will create the order factory that allows us to create concrete order i
 ```java
 public class OrderFactory {
     public Order createOrder(OrderType type) {
-        switch (type) {
-            case PHYSICAL_PRODUCT:
-                return new PhysicalProductOrder();
-            case SERVICE:
-                return new ServiceOrder();
-            case SUBSCRIPTION:
-                return new SubscriptionOrder();
-            default:
-                throw new IllegalArgumentException("Unknown order type");
-        }
+        return switch (type) {
+            case PHYSICAL_PRODUCT -> new PhysicalProductOrder();
+            case SERVICE -> new ServiceOrder();
+            case SUBSCRIPTION -> new SubscriptionOrder();
+            default -> throw new IllegalArgumentException("Unknown order type");
+        };
     }
 }
 ```
