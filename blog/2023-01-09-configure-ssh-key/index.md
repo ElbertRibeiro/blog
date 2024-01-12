@@ -27,9 +27,9 @@ To copy the generated key to the clipboard, use the command:
 cat ~/.ssh/id_ed25519.pub. 
 ```
 
-## Adding Key to Github
+## Adding Key to GitHub
 
-Open Github and go to the profile icon > Settings in the top right corner. In the user settings sidebar, click on "SSH
+Open GitHub and go to the profile icon > Settings in the top right corner. In the user settings sidebar, click on "SSH
 and GPG keys." Click on the "New SSH key" button. In the "Title" field, add a descriptive label for the new key. For
 example, if you are using your personal computer, you can name this key "Personal Computer." Paste the public key from
 the clipboard into the "Key" field. Click on "Add SSH key," and you're done!
