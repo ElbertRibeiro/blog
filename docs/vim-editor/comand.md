@@ -8,3 +8,4 @@ sidebar_position: 2
 - ``:q``  = saindo do NVIM
 - ``:w``  = salvar arquivo
 - ``:wq`` = salvar arquivo e sair
+- ``:bd`` = sair do arquivo sem sair do editor
