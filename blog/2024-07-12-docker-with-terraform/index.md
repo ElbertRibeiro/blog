@@ -2,7 +2,7 @@
 slug: docker-with-terraform
 title: Using Terraform with Docker
 authors: [ elbert ]
-tags: [ spring-boot, java, ddd, design-pattern ]
+tags: [ docker, terraform, IaC ]
 ---
 
 
