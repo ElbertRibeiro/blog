@@ -1,8 +1,11 @@
 ---
 sidebar_position: 2
+title: Comandos Basicos no VIM
+tags:
+- vim
 ---
 
-# Basics Comands in VIM
+## Basics Comands in VIM
 
 - ``:e``  = navegando entre aquivos
 - ``:q``  = saindo do NVIM
