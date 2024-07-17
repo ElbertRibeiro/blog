@@ -55,7 +55,7 @@ T<char>: Move o cursor para depois do caractere <char> anterior na linha atual.
 Movimentação por Marcadores
 m<char>: Define um marcador na posição atual com <char>.
 '<char>: Move o cursor para o início da linha onde o marcador <char> foi definido.
-- ``**<char>**` = Move o cursor exatamente para a posição onde o marcador <char>` foi definido.
+- ``**<char>**`` = Move o cursor exatamente para a posição onde o marcador <char>` foi definido.
 Movimentação por Parênteses, Colchetes e Chaves
 %: Move o cursor para o par correspondente de parênteses, colchetes ou chaves.
 Movimentação por Blocos de Código
