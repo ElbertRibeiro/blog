@@ -10,21 +10,24 @@ sidebar_position: 2
 - ``:wq`` = salvar arquivo e sair
 - ``:bd`` = sair do arquivo sem sair do editor
 
-Movimentação Básica
-h, j, k, l: Movem o cursor para a esquerda, baixo, cima e direita, respectivamente.
-w, W: Move o cursor para o início da próxima palavra. W ignora pontuação.
-b, B: Move o cursor para o início da palavra anterior. B ignora pontuação.
-e, E: Move o cursor para o final da próxima palavra. E ignora pontuação.
-Movimentação por Linhas e Colunas
-0: Move o cursor para o início da linha atual.
-^: Move o cursor para o primeiro caractere não em branco na linha.
-$: Move o cursor para o final da linha.
-g_: Move o cursor para o último caractere não em branco na linha.
-Movimentação por Parágrafos e Sentenças
-{: Move o cursor para o início do parágrafo anterior.
-}: Move o cursor para o início do próximo parágrafo.
-(, ): Move o cursor para o início da sentença anterior/próxima.
-Movimentação por Telas
+## Movimentação Básica
+- ``h, j, k, l`` = Movem o cursor para a esquerda, baixo, cima e direita, respectivamente.
+- ``w, W``       = Move o cursor para o início da próxima palavra. W ignora pontuação.
+- ``b, B``       = Move o cursor para o início da palavra anterior. B ignora pontuação.
+- ``e, E``       = Move o cursor para o final da próxima palavra. E ignora pontuação.
+
+## Movimentação por Linhas e Colunas
+- ``0``  = Move o cursor para o início da linha atual.
+- ``^``  = Move o cursor para o primeiro caractere não em branco na linha.
+- ``$``  = Move o cursor para o final da linha.
+- ``g_`` = Move o cursor para o último caractere não em branco na linha.
+
+## Movimentação por Parágrafos e Sentenças
+- ``{``    = Move o cursor para o início do parágrafo anterior.
+- ``}``    = Move o cursor para o início do próximo parágrafo.
+- ``(, )`` = Move o cursor para o início da sentença anterior/próxima.
+
+## Movimentação por Telas
 H: Move o cursor para o início da tela (topo).
 M: Move o cursor para o meio da tela.
 L: Move o cursor para o final da tela (rodapé).
@@ -33,7 +36,8 @@ Ctrl-d: Rola a tela para baixo em meia página.
 Ctrl-b: Rola a tela para cima em uma página inteira.
 Ctrl-f: Rola a tela para baixo em uma página inteira.
 zz: Centraliza a linha atual na tela.
-Movimentação por Arquivo
+
+## Movimentação por Arquivo
 gg: Move o cursor para o início do arquivo.
 G: Move o cursor para o final do arquivo.
 : Move o cursor para a linha n.
