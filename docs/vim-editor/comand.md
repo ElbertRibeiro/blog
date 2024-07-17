@@ -41,7 +41,8 @@ zz: Centraliza a linha atual na tela.
 gg: Move o cursor para o início do arquivo.
 G: Move o cursor para o final do arquivo.
 : Move o cursor para a linha n.
-Movimentação por Procuras e Padrões
+
+## Movimentação por Procuras e Padrões
 /: Inicia uma pesquisa para frente.
 ?: Inicia uma pesquisa para trás.
 n: Move para a próxima ocorrência da pesquisa.
@@ -52,15 +53,18 @@ F<char>: Move o cursor para o caractere <char> anterior na linha atual.
 T<char>: Move o cursor para depois do caractere <char> anterior na linha atual.
 ;: Repete o último comando f, t, F ou T.
 ,: Repete o último comando f, t, F ou T na direção oposta.
-Movimentação por Parênteses, Colchetes e Chaves
+
+## Movimentação por Parênteses, Colchetes e Chaves
 %: Move o cursor para o par correspondente de parênteses, colchetes ou chaves.
-Movimentação por Blocos de Código
+
+## Movimentação por Blocos de Código
 [[: Move o cursor para o início do bloco de código anterior.
 ]]: Move o cursor para o início do próximo bloco de código.
 []: Move o cursor para o final do bloco de código anterior.
 ][: Move o cursor para o final do próximo bloco de código.
-Movimentação por Funções
-[m: Move o cursor para o início da função anterior.
-]m: Move o cursor para o início da próxima função.
-[M: Move o cursor para o final da função anterior.
-]M: Move o cursor para o final da próxima função.
+
+## Movimentação por Funções
+- ``[m`` = Move o cursor para o início da função anterior.
+- ``]m`` = Move o cursor para o início da próxima função.
+- ``[M`` = Move o cursor para o final da função anterior.
+- ``]M`` = Move o cursor para o final da próxima função.
