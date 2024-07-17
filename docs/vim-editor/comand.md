@@ -42,6 +42,7 @@ gg: Move o cursor para o início do arquivo.
 G: Move o cursor para o final do arquivo.
 : Move o cursor para a linha n.
 
+<!-- 
 ## Movimentação por Procuras e Padrões
 /: Inicia uma pesquisa para frente.
 ?: Inicia uma pesquisa para trás.
@@ -52,7 +53,8 @@ t<char>: Move o cursor para antes do próximo caractere <char> na linha atual.
 F<char>: Move o cursor para o caractere <char> anterior na linha atual.
 T<char>: Move o cursor para depois do caractere <char> anterior na linha atual.
 ;: Repete o último comando f, t, F ou T.
-,: Repete o último comando f, t, F ou T na direção oposta.
+,: Repete o último comando f, t, F ou T na direção oposta. 
+-->
 
 ## Movimentação por Parênteses, Colchetes e Chaves
 %: Move o cursor para o par correspondente de parênteses, colchetes ou chaves.
