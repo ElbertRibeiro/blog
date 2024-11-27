@@ -73,3 +73,22 @@ T<char>: Move o cursor para depois do caractere <char> anterior na linha atual.
 - ``]m`` = Move o cursor para o início da próxima função.
 - ``[M`` = Move o cursor para o final da função anterior.
 - ``]M`` = Move o cursor para o final da próxima função.
+
+## Desfazer alterações
+Pressione u (lowercase) para desfazer a última alteração.
+Se quiser desfazer múltiplas alterações, continue pressionando u.
+Refazer alterações
+Pressione Ctrl + r para refazer uma alteração desfeita.
+Isso reaplica as alterações que você desfez com u.
+Ver o histórico de alterações
+Você pode visualizar o histórico de alterações no Vim com o comando:
+
+
+:undolist
+Isso exibe uma lista de ações que podem ser desfeitas ou refeitas, com identificadores específicos.
+
+Ir para um ponto específico no histórico
+Você pode usar os comandos:
+
+:undo N - Para voltar ao estado de um ponto específico no histórico (onde N é o número da mudança, como mostrado no :undolist).
+:redo N - Para refazer mudanças específicas no histórico.
