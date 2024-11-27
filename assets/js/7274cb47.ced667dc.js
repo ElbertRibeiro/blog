@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[7566],{3637:s=>{s.exports=JSON.parse('{"label":"vim","permalink":"/site/docs/tags/vim","allTagsPath":"/site/docs/tags","count":1,"items":[{"id":"vim-editor/comand","title":"Comandos Basicos no VIM","description":"Basics Comands in VIM","permalink":"/site/docs/vim-editor/comand"}]}')}}]);
