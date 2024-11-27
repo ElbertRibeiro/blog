@@ -94,5 +94,6 @@ Você pode usar os comandos:
 :redo N - Para refazer mudanças específicas no histórico.
 
 
-## Instalando as dependencias
-- ``:PlugInstall`` = Instalando as dependencias definidas init.vim
+## Gerenciado as dependencias
+- ``:PlugInstall`` = Instalando as dependencias definidas no init.vim
+- ``:PlugUpdate`` = Atualizando dependencias definidas no init.vim
