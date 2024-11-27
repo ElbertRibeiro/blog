@@ -92,3 +92,7 @@ Você pode usar os comandos:
 
 :undo N - Para voltar ao estado de um ponto específico no histórico (onde N é o número da mudança, como mostrado no :undolist).
 :redo N - Para refazer mudanças específicas no histórico.
+
+
+## Instalando as dependencias
+- ``:PlugInstall`` = Instalando as dependencias definidas init.vim
